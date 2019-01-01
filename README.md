@@ -1,6 +1,21 @@
 # macos-use
 
-## 在Mac上安装nginx
+## nginx
+### 配置反向代理
+
+```
+  1     #配置一个反向代理，当访问localhost:3333或192.168.1.234:3333时，转向到localhost:8888 
+  2     server {
+  3       listen  3333;
+  4       server_name localhost 192.168.1.234;
+  5 
+  6       location / {
+  7         proxy_pass http://localhost:8888;
+  8       }
+  9     }
+```
+
+### 在Mac上安装nginx
 
 ```
    
