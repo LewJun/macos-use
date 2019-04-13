@@ -1,5 +1,38 @@
 # macos-use
 
+## 解决brew install 很慢
+参考 [https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+### Homebrew 镜像使用帮助
+注:该镜像是 Homebrew 的 formula 索引的镜像（即 brew update 时所更新内容）。本镜像站同时提供 Homebrew 二进制预编译包的镜像，请参考 Homebrew bottles 镜像使用帮助。
+
+### 替换现有上游
+cd "$(brew --repo)"
+git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+
+brew update
+### 使用homebrew-science或者homebrew-python
+(已经deprecated了)
+
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-science"
+git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-science.git
+
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-python"
+git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-python.git
+
+brew update
+### 复原
+(感谢Snowonion Lee提供说明)
+
+cd "$(brew --repo)"
+git remote set-url origin https://github.com/Homebrew/brew.git
+
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+git remote set-url origin https://github.com/Homebrew/homebrew-core
+
+brew update
 ## nginx
 ### 配置反向代理
 
