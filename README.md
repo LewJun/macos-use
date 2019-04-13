@@ -1,5 +1,14 @@
 # macos-use
 
+
+## 安装mysql
+1. brew info mysql
+2. brew install mysql
+3. mysql_secure_installation
+4. brew services start mysql
+5.登录
+> mysql -u root -proot123456
+
 ## 解决brew install 很慢
 参考 [https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 ### Homebrew 镜像使用帮助
